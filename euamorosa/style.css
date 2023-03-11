@@ -1,0 +1,15 @@
+body {
+    background-color: pink;
+    text-align: center;    
+    color: rgb(247, 29, 210);
+}
+
+h3 {
+    color: rgb(247, 29, 210);
+
+}
+
+img {
+    mix-blend-mode: darken;
+}
+
