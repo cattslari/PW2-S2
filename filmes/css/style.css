@@ -1,0 +1,80 @@
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+}
+
+.preto {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(0deg, rgb(0, 0, 0) 7%, rgba(0, 0, 0, 0.400) 30%, rgba(196, 196, 196, 0) 100%);
+    z-index: 99999999999999;
+
+}
+
+header {
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+}
+
+header nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.267);
+    align-items: center;
+
+}
+
+header nav ul {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    list-style: none;
+}
+
+header nav ul li a {
+    color: white;
+    text-shadow: 10px 10px 15px black;
+    padding: 10px;
+    border-radius: 15px;
+    transition: 1s;
+}
+
+header nav ul li a:hover {
+    text-decoration: none;
+    background-color: black;
+    color: #fff;
+}
+
+header nav img {
+    width: 50%;
+}
+
+p {
+    color: white;
+    font-size: 50px;
+}
+
+.carousel-inner {
+    height: 100vh;
+}
+
+.formulario {
+    margin-top: 130px;
+    padding: 70px;
+    border-radius: 20px;
+    border: 1px solid;
+}
