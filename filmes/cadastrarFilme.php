@@ -1,21 +1,10 @@
 <?php include('cabecalho.php') ?>
 
-<header>
-    <nav>
-        <div>
-            <h1><img src="./images/bllbranco.png" alt=""></h1>
-        </div>
 
-        <ul>
-            <li><a href="index.php">Inicio</a></li>
-            <li><a href="#">Cartaz</a></li>
-            <li><a href="#">Gêneros</a></li>
-            <li><a href="cadastrarFilme.php">Cadastrar filme</a></li>
-        </ul>
-    </nav>
-</header>
 
-<form action="filme-salvar.php" class="container formulario" method="POST">
+
+
+<form action="filme-salvar.php" class="container formulario" method="POST" enctype="multipart/form-data">
     <h1>Formulário para cadastro de filmes</h1>
     <div class="row">
         <div class="mb-3 col-12">
@@ -30,7 +19,7 @@
         </div>
     </div>
     <div class="row">
-    <div class="mb-3 col-4">
+        <div class="mb-3 col-4">
             <label for="ano" class="form-label">Ano</label>
             <input type="number" class="form-control" id="ano" placeholder="Ex: 2020" name="ano">
         </div>
@@ -40,7 +29,25 @@
         </div>
         <div class="mb-3 col-4">
             <label for="genero" class="form-label">Gênero</label>
-            <input type="text" class="form-control" id="genero" placeholder="EX: Aventura" name="genero">
+            <select name="genero" id="">
+                <?php
+
+                $stmt = $pdo->prepare("select * from genero");
+
+                $stmt->execute();
+
+                while ($row = $stmt->fetch(PDO::FETCH_BOTH)) {
+
+                ?>
+
+                    <option value="<?php echo $row['genero'] ?>">
+
+                        <?php echo $row['genero'] ?>
+
+                    </option>
+
+                <?php } ?>
+            </select>
         </div>
     </div>
     <div class="row">
@@ -50,12 +57,12 @@
         </div>
         <div class="mb-3 col-6">
             <label for="imgFilme" class="form-label">Imagem filme</label>
-            <input type="text" class="form-control" id="imgFilme" name="imagemFilme" placeholder="Link da imagem">
+            <input type="file" id="imagemFilme" name="imagemFilme" required>
         </div>
     </div>
     <div class="col-auto">
-    <button type="submit" class="btn btn-light">Salvar</button>
-  </div>
+        <button type="submit" class="btn btn-light">Salvar</button>
+    </div>
 </form>
 
-    <?php include('rodape.php') ?>
+<?php include('rodape.php') ?>

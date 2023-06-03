@@ -1,11 +1,11 @@
 <?php 
 
     $servidor = "localhost";
-    $banco="dbaula";
+    $banco="projetofilmes";
     $usuario="root";
     $senha="";
 
     $pdo = new PDO("mysql:host=$servidor;dbname=$banco", $usuario, $senha);
-
+    
 
 ?>
